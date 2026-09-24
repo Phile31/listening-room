@@ -184,7 +184,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .equipment-card li::before { content: ""; position: absolute; left: 0; top: 1rem; width: 4px; height: 4px; border-radius: 50%; background: var(--copper); }
 .equipment-card small { display: block; margin-top: .2rem; color: #716b62; font-size: .72rem; letter-spacing: .02em; }
 .feature-card { background: rgba(255,255,255,.42); }
-.compact-list { columns: 2; column-gap: 1.5rem; }
+.compact-list { columns: 1; }
 
 .notes-section { display: grid; grid-template-columns: minmax(160px,.75fr) minmax(0,2.25fr); gap: 2rem; }
 .notes-body { max-width: 900px; }
