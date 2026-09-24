@@ -177,6 +177,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .equipment-card { padding: clamp(1.4rem, 3vw, 2.5rem); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.13); }
 .equipment-card h3 { margin: 0 0 1.5rem; font: 1.55rem/1.1 Georgia, serif; }
 .equipment-card h4 { margin: 2rem 0 .8rem; color: #68503e; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.equipment-card h4.serif-subhead { font: 1.3rem/1.1 Georgia, serif; letter-spacing: 0; text-transform: none; }
 .equipment-card ul { margin: 0; padding: 0; list-style: none; }
 .equipment-card li { position: relative; padding: .56rem 0 .56rem 1rem; border-top: 1px solid rgba(16,17,20,.09); font-size: .91rem; line-height: 1.35; }
 .equipment-card li::before { content: ""; position: absolute; left: 0; top: 1rem; width: 4px; height: 4px; border-radius: 50%; background: var(--copper); }
