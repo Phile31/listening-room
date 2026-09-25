@@ -347,3 +347,6 @@ footer a:hover, footer a:focus-visible { color: white; }
   html { scroll-behavior: auto; }
   .gallery-item img { transition: none; }
 }
+
+
+.equipment-card { background: rgba(255,255,255,.42); }
