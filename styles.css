@@ -204,7 +204,8 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .commitment { max-width: 760px; padding: 2rem 0; border-top: 1px solid var(--line); }
 .commitment h3 { margin: 0 0 .8rem; font: 1.55rem/1.2 Georgia, "Times New Roman", serif; }
 .commitment p { margin: 0; color: #363431; font-size: 1.03rem; }
-.reviewing-signoff { max-width: 760px; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 0; background: linear-gradient(var(--line), var(--line)) top / 100% 1px no-repeat; }
+.commitment:last-child { padding-bottom: 0; }
+.reviewing-signoff { max-width: 760px; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 0; background: linear-gradient(var(--line), var(--line)) top / 100% 1px no-repeat; }
 .reviewing-signoff p { margin: 0 0 1.5rem; }
 
 footer {
