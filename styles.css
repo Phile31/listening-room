@@ -141,15 +141,17 @@ h1 span { color: #d9d4cc; }
 }
 .room-section {
   display: grid;
-  grid-template-columns: minmax(160px, .7fr) minmax(0, 2.3fr);
-  gap: 2rem;
+  grid-template-columns: minmax(280px, .82fr) minmax(0, 1.55fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
 }
-.room-copy { max-width: 980px; }
+.room-section > .section-label { grid-column: 1 / -1; }
+.room-copy { max-width: 800px; }
 h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
-.lede { max-width: 900px; margin: 2rem 0 3rem; font: clamp(1.5rem, 2.6vw, 2.45rem)/1.25 Georgia, serif; }
-.prose-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(2rem, 6vw, 5rem); color: #3e3c39; }
-.prose-columns p { margin: 0; }
-.room-plan { max-width: 760px; margin: 4rem auto 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+.lede { max-width: 800px; margin: 2rem 0 3rem; font: clamp(1.5rem, 2.6vw, 2.45rem)/1.25 Georgia, serif; }
+.prose-columns { display: grid; grid-template-columns: 1fr; gap: 1.25rem; color: #3e3c39; }
+.prose-columns p { margin: 0; max-width: 760px; }
+.room-plan { width: 100%; max-width: 420px; margin: 0; }
 .room-plan img { width: 100%; height: auto; }
 .room-plan figcaption { margin-top: .8rem; color: #68503e; font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
 
