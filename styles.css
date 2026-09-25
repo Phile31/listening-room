@@ -109,6 +109,16 @@ nav a:hover, nav a:focus-visible { opacity: 1; }
   letter-spacing: .18em;
   text-transform: uppercase;
 }
+.hero-role {
+  margin: -.9rem 0 1.8rem;
+  color: rgba(255,255,255,.76);
+  font-size: .78rem;
+  font-weight: 650;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.hero-role em { font-style: italic; }
+
 h1, h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
