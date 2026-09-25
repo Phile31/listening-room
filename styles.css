@@ -234,7 +234,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .articles-body { min-width: 0; }
 .articles-heading { display: grid; grid-template-columns: minmax(0,.65fr) minmax(360px,1.35fr); align-items: start; gap: clamp(2rem,5vw,5rem); margin-bottom: 4rem; }
 .articles-heading h2 { margin: 0; color: white; }
-.articles-copy { padding: clamp(1.4rem,2.5vw,2.2rem); border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.045); color: rgba(255,255,255,.78); font-size: .98rem; line-height: 1.6; }
+.articles-copy { color: rgba(255,255,255,.84); font-size: 1rem; line-height: 1.55; }
 .articles-copy p { margin: 0 0 1.35rem; }
 .articles-copy p:last-child { margin-bottom: 0; }
 .articles-copy a { color: white; text-decoration-color: var(--copper); text-underline-offset: .18em; }
