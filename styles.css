@@ -174,6 +174,20 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .gallery-item:last-child img { object-position: center top; }
 .gallery-item::after { content: ""; position: absolute; inset: auto 0 0; height: 35%; background: linear-gradient(transparent, rgba(0,0,0,.7)); }
 .gallery-item span { position: absolute; z-index: 1; left: 1.2rem; bottom: 1rem; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; }
+.gallery-item .photo-credit {
+  left: auto;
+  right: .9rem;
+  top: 50%;
+  bottom: auto;
+  color: white;
+  font-size: .64rem;
+  letter-spacing: .12em;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+  text-shadow: 0 1px 4px rgba(0,0,0,.75);
+  pointer-events: none;
+}
 .gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.025); filter: brightness(1.08); }
 
 .system-section { background: var(--paper-2); }
