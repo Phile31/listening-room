@@ -120,7 +120,7 @@ h1 {
   font-size: clamp(3rem, 8vw, 7.7rem);
   line-height: .88;
 }
-h1 span { color: #d9d4cc; }
+h1 span { display: block; margin-top: .07em; color: #fff; }
 .hero-facts {
   position: absolute;
   z-index: 3;
