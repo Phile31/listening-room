@@ -189,6 +189,8 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
   pointer-events: none;
 }
 .gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.025); filter: brightness(1.08); }
+.gallery-item img[src="view-14-brightened.webp"], .lightbox img[src="view-14-brightened.webp"] { filter: brightness(1.06); }
+.gallery-item:hover img[src="view-14-brightened.webp"], .gallery-item:focus-visible img[src="view-14-brightened.webp"] { filter: brightness(1.12); }
 
 .system-section { background: var(--paper-2); }
 .system-intro {
