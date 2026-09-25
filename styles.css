@@ -62,7 +62,7 @@ button { font: inherit; }
   border-radius: 50%;
   box-shadow: inset 0 0 0 6px rgba(201,128,75,.3);
 }
-nav { display: flex; gap: clamp(.8rem, 2.5vw, 2.5rem); }
+nav { display: flex; gap: clamp(.9rem, 2.8vw, 2.8rem); }
 nav a {
   font-size: .76rem;
   letter-spacing: .08em;
