@@ -177,14 +177,14 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .gallery-item .photo-credit {
   left: auto;
   right: .9rem;
-  top: 50%;
-  bottom: auto;
+  top: auto;
+  bottom: 1rem;
   color: white;
   font-size: .64rem;
   letter-spacing: .12em;
   line-height: 1;
   writing-mode: vertical-rl;
-  transform: translateY(-50%) rotate(180deg);
+  transform: none;
   text-shadow: 0 1px 4px rgba(0,0,0,.75);
   pointer-events: none;
 }
