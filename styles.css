@@ -191,8 +191,22 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.025); filter: brightness(1.08); }
 
 .system-section { background: var(--paper-2); }
-.system-intro { display: grid; grid-template-columns: .75fr 1.4fr 1fr; align-items: end; gap: 2rem; margin-bottom: 4rem; }
-.system-intro p { max-width: 32rem; margin: 0; color: #55514b; }
+.system-intro {
+  display: grid;
+  grid-template-columns: .75fr 1.4fr 1fr;
+  align-items: end;
+  gap: 2rem;
+  min-height: clamp(17rem, 28vw, 23rem);
+  margin-bottom: 4rem;
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(7,8,10,.76) 0%, rgba(7,8,10,.5) 48%, rgba(7,8,10,.7) 100%),
+    url("https://i.imgur.com/FTNzlmb_d.webp?maxwidth=2400&fidelity=grand") center 50% / cover no-repeat;
+}
+.system-intro h2 { color: white; }
+.system-intro p { max-width: 32rem; margin: 0; color: rgba(255,255,255,.84); }
 .equipment-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .equipment-card { padding: clamp(1.4rem, 3vw, 2.5rem); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.13); }
 .equipment-card h3 { margin: 0 0 1.5rem; font: 1.55rem/1.1 Georgia, serif; }
