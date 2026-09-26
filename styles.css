@@ -153,7 +153,7 @@ h1 span { display: block; margin-top: .07em; color: #fff; }
   display: grid;
   grid-template-columns: minmax(280px, .82fr) minmax(0, 1.55fr);
   gap: clamp(2rem, 5vw, 5rem);
-  align-items: start;
+  align-items: end;
 }
 .room-section > .section-label { grid-column: 1 / -1; }
 .room-copy { max-width: 800px; }
