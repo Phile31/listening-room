@@ -162,6 +162,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .lede { max-width: 800px; margin: 2rem 0 3rem; font: clamp(1.5rem, 2.6vw, 2.45rem)/1.25 Georgia, serif; }
 .prose-columns { display: grid; grid-template-columns: 1fr; gap: 1.25rem; color: #3e3c39; }
 .prose-columns p { margin: 0; max-width: 760px; }
+.room-copy a { text-decoration-color: var(--copper); text-underline-offset: .18em; }
 .room-plan { width: 100%; max-width: 420px; margin: 0; }
 .room-plan img { width: 100%; height: auto; }
 .room-plan figcaption { margin-top: .8rem; color: #68503e; font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
@@ -272,13 +273,13 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .reviewing-body { max-width: 900px; }
 .reviewing-opening { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(220px,.7fr); align-items: start; gap: clamp(2rem,4vw,3.5rem); margin-bottom: .75rem; }
 .reviewing-opening h2 { margin-bottom: 2rem; }
-.reviewing-intro { max-width: 760px; margin: 0; font-size: 1.15rem; color: #363431; }
+.reviewing-intro { max-width: 760px; margin: 0; font-size: 1rem; color: #363431; }
 .reviewing-portrait { margin: 0; }
 .reviewing-portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .reviewing-body a { text-decoration-color: var(--copper); text-underline-offset: .18em; }
 .commitment { max-width: 760px; padding: 1.35rem 0; border-top: 1px solid var(--line); }
 .commitment h3 { margin: 0 0 .65rem; font: 1.55rem/1.2 Georgia, "Times New Roman", serif; }
-.commitment p { margin: 0; color: #363431; font-size: 1.03rem; }
+.commitment p { margin: 0; color: #363431; font-size: 1rem; }
 .commitment:last-child { padding-bottom: 0; }
 .reviewing-signoff { max-width: 760px; margin-top: 1.4rem; padding-top: 1.4rem; border-top: 0; background: linear-gradient(var(--line), var(--line)) top / 100% 1px no-repeat; }
 .reviewing-signoff p { margin: 0 0 1.5rem; }
