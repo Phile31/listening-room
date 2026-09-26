@@ -257,7 +257,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .article-card { display: block; color: white; text-decoration: none; }
 .article-card img { display: block; width: 100%; aspect-ratio: .78; object-fit: cover; object-position: top; margin-bottom: 1rem; box-shadow: 0 .8rem 2.2rem rgba(0,0,0,.35); transition: transform .2s ease, filter .2s ease; }
 .article-card span { display: block; margin-bottom: .35rem; color: var(--copper); font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.article-card h3 { display: -webkit-box; min-height: 2.44em; margin: 0; overflow: hidden; color: rgba(255,255,255,.9); font: 1rem/1.22 Georgia, serif; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.article-card h3 { min-height: 2.44em; margin: 0; color: rgba(255,255,255,.9); font: 1rem/1.22 Georgia, serif; }
 .article-card:hover img, .article-card:focus-visible img { transform: translateY(-5px); filter: brightness(1.07); }
 .article-card:focus-visible { outline: 2px solid var(--copper); outline-offset: 6px; }
 
