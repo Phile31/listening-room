@@ -169,6 +169,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .room-reflection h3 { margin: .3rem 0 1rem; color: var(--ink); font: 400 clamp(1.45rem, 2vw, 1.75rem)/1.15 Georgia, serif; letter-spacing: -.02em; }
 .room-reflection p { margin: 0 0 1.25rem; }
 .room-reflection p:last-child { margin-bottom: 0; }
+.room-reflection a { text-decoration-color: var(--copper); text-underline-offset: .18em; }
 
 .room-plan { width: 100%; max-width: 420px; margin: 0; }
 .room-plan img { width: 100%; height: auto; }
