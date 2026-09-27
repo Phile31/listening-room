@@ -342,6 +342,17 @@ footer a:hover, footer a:focus-visible { color: white; }
   line-height: 1;
   cursor: pointer;
 }
+.lightbox-prev svg, .lightbox-next svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
 .lightbox-prev { left: .75rem; }
 .lightbox-next { right: .75rem; }
 .lightbox-prev:hover, .lightbox-next:hover, .lightbox-prev:focus-visible, .lightbox-next:focus-visible {
