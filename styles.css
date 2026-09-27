@@ -242,6 +242,8 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .equipment-card ul { margin: 0; padding: 0; list-style: none; }
 .equipment-card li { position: relative; padding: .56rem 0 .56rem 1rem; border-top: 1px solid rgba(16,17,20,.09); font-size: .91rem; line-height: 1.35; }
 .equipment-card li::before { content: ""; position: absolute; left: 0; top: 1rem; width: 4px; height: 4px; border-radius: 50%; background: var(--copper); }
+.equipment-card a { text-decoration-color: var(--copper); text-underline-offset: .18em; }
+.equipment-card a:hover, .equipment-card a:focus-visible { color: #9b552e; }
 .equipment-card small { display: block; margin-top: .2rem; color: #716b62; font-size: .72rem; letter-spacing: .02em; }
 .feature-card { background: rgba(255,255,255,.42); }
 .compact-list { columns: 1; }
