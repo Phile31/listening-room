@@ -323,6 +323,36 @@ footer a:hover, footer a:focus-visible { color: white; }
 .lightbox img { width: 100%; max-height: 80vh; object-fit: contain; }
 .lightbox p { margin: 0; padding: 1rem 1.25rem; color: #c9c4bc; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
 .lightbox-close { position: absolute; z-index: 2; right: .8rem; top: .8rem; padding: .55rem .75rem; border: 1px solid rgba(255,255,255,.4); color: white; background: rgba(0,0,0,.65); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 50%;
+  background: rgba(0,0,0,.7);
+  color: white;
+  font: inherit;
+  font-size: 2.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox-prev { left: .75rem; }
+.lightbox-next { right: .75rem; }
+.lightbox-prev:hover, .lightbox-next:hover, .lightbox-prev:focus-visible, .lightbox-next:focus-visible {
+  background: rgba(0,0,0,.95);
+  outline-color: white;
+}
+@media (max-width: 600px) {
+  .lightbox-prev, .lightbox-next { width: 2.75rem; height: 2.75rem; font-size: 2rem; }
+  .lightbox-prev { left: .35rem; }
+  .lightbox-next { right: .35rem; }
+}
 
 @media (max-width: 900px) {
   .site-header nav a:nth-child(-n+2) { display: none; }
