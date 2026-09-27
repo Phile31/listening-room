@@ -155,7 +155,7 @@ h1 span { display: block; margin-top: .07em; color: #fff; }
   display: grid;
   grid-template-columns: minmax(280px, .75fr) minmax(0, 1.65fr);
   column-gap: clamp(1.5rem, 3vw, 3rem);
-  row-gap: clamp(1.5rem, 2.5vw, 2rem);
+  row-gap: 1.25rem;
   align-items: end;
 }
 .room-section > .section-label { grid-column: 1 / -1; margin-bottom: 0; }
@@ -165,7 +165,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .prose-columns { display: grid; grid-template-columns: 1fr; gap: 1.25rem; color: #3e3c39; }
 .prose-columns p { margin: 0; max-width: 760px; }
 .room-copy a { text-decoration-color: var(--copper); text-underline-offset: .18em; }
-.room-reflection { grid-column: 2; width: 100%; max-width: 800px; margin: .5rem 0 0; color: #3e3c39; }
+.room-reflection { grid-column: 2; width: 100%; max-width: 800px; margin: 0; color: #3e3c39; }
 .room-reflection p { margin: 0 0 1.25rem; }
 .room-reflection p:last-child { margin-bottom: 0; }
 
