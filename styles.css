@@ -165,6 +165,10 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .prose-columns { display: grid; grid-template-columns: 1fr; gap: 1.25rem; color: #3e3c39; }
 .prose-columns p { margin: 0; max-width: 760px; }
 .room-copy a { text-decoration-color: var(--copper); text-underline-offset: .18em; }
+.room-reflection { grid-column: 1 / -1; width: 100%; max-width: 800px; margin: .5rem auto 0; color: #3e3c39; }
+.room-reflection p { margin: 0 0 1.25rem; }
+.room-reflection p:last-child { margin-bottom: 0; }
+
 .room-plan { width: 100%; max-width: 420px; margin: 0; }
 .room-plan img { width: 100%; height: auto; }
 .room-plan figcaption { margin-top: .8rem; color: #68503e; font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
