@@ -165,7 +165,7 @@ h1 span { display: block; margin-top: .07em; color: #fff; }
 .room-quote {
   grid-column: 1;
   grid-row: 3;
-  align-self: start;
+  align-self: end;
   width: 100%;
   max-width: 420px;
   margin: 0;
