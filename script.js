@@ -5,6 +5,10 @@ const closeButton = lightbox.querySelector('.lightbox-close');
 const previousButton = lightbox.querySelector('.lightbox-prev');
 const nextButton = lightbox.querySelector('.lightbox-next');
 const galleryItems = [...document.querySelectorAll('.gallery-item')];
+const mobileMenu = document.querySelector('.mobile-menu');
+mobileMenu.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => { mobileMenu.open = false; });
+});
 let activeIndex = 0;
 
 function showPhoto(index) {
