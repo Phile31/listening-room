@@ -237,6 +237,10 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
   pointer-events: none;
 }
 .gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.025); filter: brightness(1.08); }
+.gallery-item img[src*="if1Sii0_d.webp"], .lightbox img[src*="if1Sii0_d.webp"] { filter: url(#view03-neutral); }
+.gallery-item:hover img[src*="if1Sii0_d.webp"], .gallery-item:focus-visible img[src*="if1Sii0_d.webp"] { filter: url(#view03-neutral) brightness(1.08); }
+.gallery-item img[src="gallery-view-04-final-corrected.webp"], .lightbox img[src="gallery-view-04-final-corrected.webp"] { filter: url(#view04-neutral); }
+.gallery-item:hover img[src="gallery-view-04-final-corrected.webp"], .gallery-item:focus-visible img[src="gallery-view-04-final-corrected.webp"] { filter: url(#view04-neutral) brightness(1.08); }
 .gallery-item img[src="gallery-view-08-bonus.jpg"], .lightbox img[src="gallery-view-08-bonus.jpg"] { filter: url(#view11-balance) brightness(.97); }
 .gallery-item:hover img[src="gallery-view-08-bonus.jpg"], .gallery-item:focus-visible img[src="gallery-view-08-bonus.jpg"] { filter: url(#view11-balance) brightness(1.04); }
 .gallery-item img[src="view-14-brightened.webp"], .lightbox img[src="view-14-brightened.webp"] { filter: url(#view12-balance) brightness(1.06); }
