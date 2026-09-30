@@ -17,7 +17,7 @@ jobs:
           curl -L --fail 'https://i.imgur.com/hoN9jR2_d.webp?maxwidth=1600&fidelity=grand' -o /tmp/view5-source.webp
       - name: Create tonal correction
         run: |
-          magick /tmp/view5-source.webp \
+          convert /tmp/view5-source.webp \
             -colorspace sRGB \
             -level 0%,98%,1.16 \
             -brightness-contrast 2x-7 \
