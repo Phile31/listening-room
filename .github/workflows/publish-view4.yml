@@ -1,0 +1,104 @@
+name: Publish View 4 saturation edit
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-view4.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python imaging dependencies
+        run: pip install pillow numpy
+      - name: Edit View 4 saturation
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          import numpy as np, colorsys
+          from pathlib import Path
+
+          src = Path('gallery-view-04-final-corrected.webp')
+          dst = Path('gallery-view-04-balanced.webp')
+
+          im = Image.open(src).convert('RGB')
+          a = np.asarray(im).astype(np.float32) / 255.0
+          h, w, _ = a.shape
+
+          # First: very slight global saturation reduction (~3%).
+          mx = a.max(axis=2)
+          mn = a.min(axis=2)
+          delta = mx - mn
+          sat = np.where(mx > 1e-6, delta / mx, 0.0)
+          val = mx
+
+          # HSV hue calculation, vectorized.
+          hue = np.zeros((h, w), dtype=np.float32)
+          mask = delta > 1e-6
+          r,g,b = a[:,:,0], a[:,:,1], a[:,:,2]
+          mr = mask & (mx == r)
+          mg = mask & (mx == g)
+          mb = mask & (mx == b)
+          hue[mr] = ((g[mr]-b[mr]) / delta[mr]) % 6
+          hue[mg] = ((b[mg]-r[mg]) / delta[mg]) + 2
+          hue[mb] = ((r[mb]-g[mb]) / delta[mb]) + 4
+          hue = hue / 6.0
+
+          sat_global = sat * 0.97
+
+          # Second: soften only the red rug a little further.
+          # Spatial mask covers lower-center rug, feathered at the edges.
+          yy, xx = np.mgrid[0:h, 0:w]
+          x0, x1 = int(w*0.22), int(w*0.91)
+          y0, y1 = int(h*0.66), h
+          fx = np.clip(np.minimum((xx-x0)/max(1,w*0.06), (x1-xx)/max(1,w*0.06)), 0, 1)
+          fy = np.clip((yy-y0)/max(1,h*0.08), 0, 1)
+          spatial = fx * fy
+
+          # Red hue selection, broad enough for rug reds but not browns/wood.
+          red_dist = np.minimum(np.abs(hue), np.abs(hue-1.0))
+          redsel = np.clip((0.11 - red_dist) / 0.07, 0, 1)
+          redsel *= np.clip((sat_global - 0.18) / 0.35, 0, 1)
+
+          # Additional rug red reduction averages ~4%, blended softly.
+          extra = 1.0 - 0.04 * spatial * redsel
+          sat2 = sat_global * extra
+
+          # HSV back to RGB.
+          H = (hue * 6.0) % 6.0
+          C = val * sat2
+          X = C * (1 - np.abs((H % 2) - 1))
+          m = val - C
+          out = np.zeros_like(a)
+          sectors = H.astype(int)
+          for s in range(6):
+              q = sectors == s
+              if s == 0: rr,gg,bb = C,X,np.zeros_like(C)
+              elif s == 1: rr,gg,bb = X,C,np.zeros_like(C)
+              elif s == 2: rr,gg,bb = np.zeros_like(C),C,X
+              elif s == 3: rr,gg,bb = np.zeros_like(C),X,C
+              elif s == 4: rr,gg,bb = X,np.zeros_like(C),C
+              else: rr,gg,bb = C,np.zeros_like(C),X
+              out[:,:,0][q] = rr[q] + m[q]
+              out[:,:,1][q] = gg[q] + m[q]
+              out[:,:,2][q] = bb[q] + m[q]
+
+          Image.fromarray(np.clip(out*255,0,255).astype(np.uint8)).save(dst, 'WEBP', quality=95, method=6)
+          PY
+      - name: Point View 4 to edited file
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          s=s.replace('gallery-view-04-final-corrected.webp','gallery-view-04-balanced.webp')
+          p.write_text(s)
+          PY
+      - name: Commit and publish
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add gallery-view-04-balanced.webp index.html
+          git commit -m 'Publish balanced saturation edit for gallery view 4'
+          git push
