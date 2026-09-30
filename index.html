@@ -536,7 +536,7 @@
 
   <footer>
     <p><a href="#top">Listening room &amp; reference system</a></p>
-    <p><a href="https://stereophile.com/writer/247491">Rogier van Bakel</a> · <a href="mailto:stereophile.scribe@gmail.com">Email</a></p>
+    <p><a href="https://stereophile.com/writer/247491">Rogier van Bakel</a> · <a id="email-link" href="#" data-u="stereophile.scribe" data-d="gmail.com">Email</a></p>
   </footer>
 
   <dialog class="lightbox" aria-label="Enlarged photograph">
@@ -547,6 +547,14 @@
     <p></p>
   </dialog>
 
+  <script>
+  (() => {
+    const link = document.getElementById('email-link');
+    if (!link) return;
+    const address = link.dataset.u + '@' + link.dataset.d;
+    link.href = 'mailto:' + address;
+  })();
+</script>
   <script src="script.js?v=20260927-2"></script>
 </body>
 </html>
