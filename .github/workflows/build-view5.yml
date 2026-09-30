@@ -1,0 +1,51 @@
+name: Build corrected View 5
+on:
+  push:
+    paths:
+      - '.github/workflows/build-view5.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Download exact current View 5
+        run: |
+          curl -L --fail 'https://i.imgur.com/hoN9jR2_d.webp?maxwidth=1600&fidelity=grand' -o /tmp/view5-source.webp
+      - name: Create tonal correction
+        run: |
+          magick /tmp/view5-source.webp \
+            -colorspace sRGB \
+            -level 0%,98%,1.16 \
+            -brightness-contrast 2x-7 \
+            -modulate 100,96,100 \
+            gallery-view-05-natural.webp
+      - name: Update gallery to corrected file
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='https://i.imgur.com/hoN9jR2_d.webp?maxwidth=760&amp;fidelity=grand'
+          s=s.replace(old,'gallery-view-05-natural.webp')
+          p.write_text(s)
+          PY
+      - name: Remove obsolete View 5 CSS overrides
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('styles.css')
+          lines=p.read_text().splitlines()
+          lines=[ln for ln in lines if 'hoN9jR2_d.webp' not in ln]
+          p.write_text('\n'.join(lines)+'\n')
+          PY
+      - name: Commit corrected image and references
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add gallery-view-05-natural.webp index.html styles.css
+          git commit -m 'Use pixel-edited natural-light version of gallery view 5'
+          git push
