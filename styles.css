@@ -297,7 +297,7 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .articles-copy { color: rgba(255,255,255,.84); font-size: 1rem; line-height: 1.55; }
 .articles-copy p { margin: 0 0 1.35rem; }
 .articles-copy p:last-child { margin-bottom: 0; }
-.articles-columns-copy { margin-top: 2.25rem; }
+.articles-columns-copy { margin-top: 2.8rem; }
 .articles-copy a { color: white; text-decoration-color: var(--copper); text-underline-offset: .18em; }
 .articles-link-list { columns: 2; column-gap: 2.5rem; margin: -.35rem 0 1.4rem; padding: 0; list-style: none; }
 .articles-link-list li { break-inside: avoid; margin: 0 0 .72rem; padding-left: .9rem; position: relative; }
