@@ -2,6 +2,22 @@ const reviewNavLabel = 'About the work';
 const reviewTitle = 'How I approach reviews.';
 const reviewSectionLabel = '05 / About the work';
 
+const reviewStyle = document.createElement('style');
+reviewStyle.textContent = `
+  .reviewing-signoff {
+    color: #363431;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  .reviewing-signoff p,
+  .reviewing-signoff a,
+  .reviewing-signoff time {
+    font-size: inherit;
+    line-height: inherit;
+  }
+`;
+document.head.appendChild(reviewStyle);
+
 document.querySelectorAll('a[href="#reviewing"]').forEach(link => {
   link.textContent = reviewNavLabel;
 });
