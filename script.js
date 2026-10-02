@@ -1,3 +1,17 @@
+const reviewNavLabel = 'About the work';
+const reviewTitle = 'How I approach reviews.';
+const reviewSectionLabel = '05 / About the work';
+
+document.querySelectorAll('a[href="#reviewing"]').forEach(link => {
+  link.textContent = reviewNavLabel;
+});
+
+const reviewingSectionLabel = document.querySelector('#reviewing .section-label');
+if (reviewingSectionLabel) reviewingSectionLabel.textContent = reviewSectionLabel;
+
+const reviewingTitle = document.getElementById('reviewing-title');
+if (reviewingTitle) reviewingTitle.textContent = reviewTitle;
+
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = lightbox.querySelector('img');
 const lightboxCaption = lightbox.querySelector('p');
