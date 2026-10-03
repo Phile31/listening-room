@@ -299,7 +299,8 @@ h2 { margin: 0; font-size: clamp(2.6rem, 5.5vw, 5.4rem); line-height: .98; }
 .articles-copy p:last-child { margin-bottom: 0; }
 .articles-columns-copy { margin-top: 3.425rem; }
 .articles-copy a { color: white; text-decoration-color: var(--copper); text-underline-offset: .18em; }
-.articles-link-list { columns: 2; column-gap: 2.5rem; margin: -.35rem 0 1.4rem; padding: 0; list-style: none; }
+.articles-link-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 2.5rem; margin: -.35rem 0 1.4rem; }
+.articles-link-list { margin: 0; padding: 0; list-style: none; }
 .articles-link-list li { break-inside: avoid; margin: 0 0 .72rem; padding-left: .9rem; position: relative; }
 .articles-link-list li::before { content: ""; position: absolute; left: 0; top: .72em; width: 4px; height: 4px; border-radius: 50%; background: var(--copper); }
 .article-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: clamp(1.4rem,2.4vw,2.5rem) clamp(1rem,2vw,2rem); }
@@ -492,7 +493,7 @@ footer a:hover, footer a:focus-visible { color: white; }
   .section-heading h2 { margin-top: 1.5rem; }
   .articles-heading { grid-template-columns: 1fr; gap: 2rem; }
   .article-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .articles-link-list { columns: 1; }
+  .articles-link-columns { grid-template-columns: 1fr; row-gap: 0; }
   .reviewing-opening { grid-template-columns: 1fr; gap: 2rem; }
   .reviewing-portrait { max-width: 22rem; }
   .equipment-card { padding: 1.5rem 1.25rem; }
