@@ -18,7 +18,7 @@ reviewStyle.textContent = `
 `;
 document.head.appendChild(reviewStyle);
 
-document.querySelectorAll('a[href="#reviewing"]').forEach(link => {
+document.querySelectorAll('nav a[href="#reviewing"]').forEach(link => {
   link.textContent = reviewNavLabel;
 });
 
